@@ -18,9 +18,6 @@
     <ClCompile Include="CppPractice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="zVector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="zVector.h">
