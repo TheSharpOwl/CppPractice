@@ -2,6 +2,7 @@
 
 #include<cstddef> 
 #include <stdexcept>
+#include <iostream>
 
 // TODO : Will add iterator implementation soon ))
 // TODO : Add catch for testing
@@ -20,7 +21,7 @@ class zVector
 
 public:
 
-	zVector() : _size(0), powerOfTwo(0) {}
+	zVector() : _size(0), powerOfTwo(1) {}
 
 	zVector(const std::size_t s) : _size(s), powerOfTwo(getPower(s))
 	{
@@ -59,13 +60,31 @@ public:
 		_data = new T[1 << npoweroftwo];
 		//copy the old data to the new vector
 		for (std::size_t i = 0; i < _size; i++)
-			_data[i] = old_data[i];
-		//delete the old data
-		delete[] old_data;
+			_data[i] = std::move(old_data[i]);
+
+
+		// No need to delete now and if it doesn't support moving it will just copy so it's fine ))
+		//delete[] old_data;
 
 		// assign the new size
 		_size = s;
 		powerOfTwo = npoweroftwo;
+	}
+
+	void push_back(const T& new_element)
+	{
+		if ((1U << powerOfTwo) < _size + 1)
+			resize(_size + 1);
+
+		_data[_size - 1] = new_element;
+	}
+
+	void push_back(const T&& new_element)
+	{
+		if ((1U << powerOfTwo) < _size + 1)
+			resize(_size + 1);
+
+		_data[_size - 1] = new_element;
 	}
 
 protected:
