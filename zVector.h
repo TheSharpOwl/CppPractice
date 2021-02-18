@@ -23,14 +23,13 @@ public:
 
 	zVector() : _size(0), powerOfTwo(1) {}
 
-	zVector(const std::size_t s) : _size(s), powerOfTwo(getPower(s))
+	zVector(const std::size_t s) : _size(s)
 	{
-
 		if(_size > 0)
-			_data = new T[1LL << powerOfTwo];
+			_data = new T[s];
 	}
 
-	~zVector() {};
+	~zVector() { delete[] _data; };
 
 
 	std::size_t size()
