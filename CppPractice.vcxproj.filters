@@ -23,5 +23,11 @@
     <ClInclude Include="zVector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="practice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VariadicTemplates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
