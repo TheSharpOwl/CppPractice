@@ -1,15 +1,22 @@
 #include "boost/scoped_array.hpp"
 #include <iostream>
 
+class A
+{
+public:
+
+	A(){};
+	~A()
+	{
+		std::cout << "destroyed\n";
+	}
+};
 int main()
 {
-	boost::scoped_array<int> p{ new int[2] };
-	*p.get() = 1;
-	p[1] = 2;
-	std::cout << p[0] << std::endl;
-
-	p.reset(new int[3]);
-	std::cin.get();
+	{
+		boost::scoped_array<A> p{ new A[2] };
+	}
+	//std::cin.get();
 	return 0;
 
 }

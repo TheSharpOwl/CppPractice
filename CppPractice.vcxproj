@@ -150,7 +150,9 @@
     <ClCompile Include="CppPractice.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArgumentDependentLookup.h" />
     <ClInclude Include="practice.h" />
+    <ClInclude Include="Questions.h" />
     <ClInclude Include="VariadicTemplates.h" />
     <ClInclude Include="zVector.h" />
   </ItemGroup>

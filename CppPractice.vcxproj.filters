@@ -29,5 +29,11 @@
     <ClInclude Include="VariadicTemplates.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Questions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArgumentDependentLookup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
